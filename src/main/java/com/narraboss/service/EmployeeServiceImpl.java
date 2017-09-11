@@ -15,26 +15,26 @@ public class EmployeeServiceImpl implements Employeeservice {
 
 	@Autowired
 	EmployeeDao employeedao;
-	
+
 	@Override
 	public List<Employee> employeelist() {
-		
+
 		return employeedao.findAll();
 	}
 
 	@Override
 	public Employee addEmployee(Employee e) {
-		
+
 		employeedao.save(e);
-		
+
 		return employeedao.findByName(e.getName());
 	}
 
 	@Override
 	public Employee DeleteEmployee(long id) {
-		
+
 		employeedao.delete(id);
-		
+
 		return null;
 	}
 
@@ -42,6 +42,12 @@ public class EmployeeServiceImpl implements Employeeservice {
 	public Employee UpdateEmployee(Employee e) {
 		employeedao.save(e);
 		return null;
+	}
+
+	@Override
+	public Employee GetById(long id) {
+
+		return employeedao.findOne(id);
 	}
 
 }

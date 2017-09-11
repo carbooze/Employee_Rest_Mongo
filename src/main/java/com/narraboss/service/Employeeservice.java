@@ -5,10 +5,12 @@ import java.util.List;
 import com.narraboss.modal.Employee;
 
 public interface Employeeservice {
-	
+
 	public List<Employee> employeelist();
-	
-	public Employee addEmployee( Employee e);
+
+	public Employee addEmployee(Employee e);
+
+	public Employee GetById(long id);
 
 	public Employee DeleteEmployee(long id);
 
